@@ -23,15 +23,15 @@ namespace UnitOneDeliverableOne
 
             //logic
             //logic for vacationType
-            if (vacationType == "Musical" || vacationType=="musical")
+            if (vacationType.ToLower() == "musical")
             {
                 destination = "New Orleans";
             }
-            else if (vacationType == "Tropical" || vacationType=="tropical")
+            else if (vacationType.ToLower() == "tropical")
             {
                 destination = "Beach Vacation in Mexico";
             }
-            else if (vacationType == "Adventurous" || vacationType=="adventurous")
+            else if (vacationType.ToLower() == "adventurous")
             {
                 destination = "Whitewater Rafting the Grand Canyon";
             }
@@ -48,12 +48,8 @@ namespace UnitOneDeliverableOne
             {
                 travelSuggestion = "Charter Flight";
             }
-            //set result string as concat
-            result = "Since you're a group of " + groupSize + " going on a " + vacationType + " vacation, you should travel by " + travelSuggestion + " to " + destination;
-            Console.WriteLine(result);
-
-
-
+            //Direct print to the console uising string interpolation
+            Console.WriteLine($"Since you're a group of { groupSize } going on a  { vacationType} vacation, you should travel by { travelSuggestion } to { destination }");
         }
     }
 }
